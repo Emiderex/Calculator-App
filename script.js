@@ -6,12 +6,12 @@ let expression = "";
 
 function evaluateExpression(expr) {
   try {
-    const safeExpr = expr
+    const calculator = expr
       .replace(/×/g, "*")
       .replace(/÷/g, "/")
       .replace(/\^/g, "**");
 
-    const result = eval(safeExpr);
+    const result = eval(calculator);
     return result;
   } catch {
     return "Error";
@@ -38,7 +38,7 @@ buttons.forEach((btn) => {
       expression = result.toString();
     } else if (btn.classList.contains("clear")) {
       expression = "";
-      historyList.innerHTML = ""; // ✅ Clear history too
+      historyList.innerHTML = ""; 
     } else if (value === "%") {
       const match = expression.match(/(\d+\.?\d*)$/);
       if (match) {
@@ -54,7 +54,7 @@ buttons.forEach((btn) => {
   });
 });
 
-// Keyboard support
+
 document.addEventListener("keydown", (e) => {
   const key = e.key;
 
@@ -68,7 +68,7 @@ document.addEventListener("keydown", (e) => {
     expression = expression.slice(0, -1);
   } else if (key === "c" || key === "C") {
     expression = "";
-    historyList.innerHTML = ""; // ✅ Clear history via keyboard
+    historyList.innerHTML = "";
   } else if (key === "%") {
     const match = expression.match(/(\d+\.?\d*)$/);
     if (match) {
