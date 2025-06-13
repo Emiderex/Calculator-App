@@ -36,9 +36,8 @@ buttons.forEach((btn) => {
       const result = evaluateExpression(expression);
       addToHistory(expression, result);
       expression = result.toString();
-    } else if (btn.classList.contains("clear")) {
+    } else if (btn.classList.contains("btn_clear")) {
       expression = "";
-      historyList.innerHTML = ""; 
     } else if (value === "%") {
       const match = expression.match(/(\d+\.?\d*)$/);
       if (match) {

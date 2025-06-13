@@ -50,9 +50,18 @@ main {
 
 .btn {
   border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn_clear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_clear img {
+  width: 50%;
+  height: auto;
+  object-fit: contain;
 }
 
 .symbols {
