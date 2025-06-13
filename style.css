@@ -12,6 +12,7 @@ body {
   align-items: center;
 }
 
+
 main {
   background: #161622;
   padding: 20px;
@@ -19,6 +20,7 @@ main {
   max-width: 95vw;
 }
 
+/* Display input area styling */
 #input_values {
   width: 100%;
   height: 80px;
@@ -31,16 +33,17 @@ main {
   background: #363c7c;
   color: white;
   text-align: right;
-  pointer-events: none;
+  pointer-events: none; /* Prevent typing inside input, display only */
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .box {
   display: grid;
-  grid-template-columns: 3.5fr 2fr;
+  grid-template-columns: 3.5fr 2fr; /* Wider numbers area than symbols */
   gap: 15px;
 }
 
+/*Parent */
 .numbers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -48,6 +51,14 @@ main {
   gap: 10px;
 }
 
+.symbols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 60px) 60px;
+  gap: 10px;
+}
+
+/* Buttons Styling*/
 .btn {
   border: none;
 }
@@ -58,18 +69,13 @@ main {
   align-items: center;
 }
 
+
 .btn_clear img {
   width: 50%;
   height: auto;
   object-fit: contain;
 }
 
-.symbols {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 60px) 60px;
-  gap: 10px;
-}
 
 .numbers .btn {
   background-color: #404258;
@@ -85,6 +91,7 @@ main {
   border-radius: 30px;
 }
 
+/* Special styling for equals button*/
 #equals {
   background-color: #c0c0c0;
   color: black;
@@ -96,13 +103,14 @@ main {
   filter: brightness(1.15);
 }
 
+/* History section under the calculator */
 #history {
   margin-top: 20px;
   color: rgb(130, 118, 118);
   opacity: 0.5;
   font-size: 14px;
   max-height: 100px;
-  overflow-y: auto;
+  overflow-y: auto; /* Scroll if history is long */
 }
 
 #history ul {
@@ -114,22 +122,23 @@ main {
   margin-bottom: 5px;
 }
 
+/* Responsive for screens that are smaller than 420px*/
 @media (max-width: 420px) {
   main {
-    width: 95vw;
+    width: 95vw; /* Make calculator fit screen */
   }
 
   .btn {
-    font-size: 16px;
+    font-size: 16px; /* Reduce button text size */
   }
 
   #inputValue {
-    height: 50px;
+    height: 50px; /* Reduce display height */
     font-size: 20px;
   }
 
   .numbers {
-    grid-template-rows: repeat(4, 50px);
+    grid-template-rows: repeat(4, 50px); /* Reduce button height */
   }
 
   .symbols {
