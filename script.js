@@ -1,4 +1,4 @@
-const input = document.getElementById("inputValue");
+const input = document.getElementById("input_values");
 const buttons = document.querySelectorAll(".btn");
 const historyList = document.getElementById("historyList");
 
