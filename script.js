@@ -41,14 +41,16 @@ buttons.forEach((btn) => {
     const value = btn.textContent;
 
 
-    /* A condition for the equals button, clear button and percentage button */
+    /* A condition for the equals button, backspace button, clear button and percentage button */
     if (btn.id === "equals") {
       const result = evaluateExpression(expression);
       addToHistory(expression, result);
       expression = result.toString();
-    } else if (btn.classList.contains("btn_clear")) {
-      expression = "";
+    } else if (btn.classList.contains("btn_backspace")) {
+      expression = expression.slice(0, -1);
       historyList.innerHTML = "";
+    } else if (btn.classList.contains("btn_clear")){
+      expression = "";
     } else if (value === "%") {
       
       const match = expression.match(/(\d+\.?\d*)$/);
