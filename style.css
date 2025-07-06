@@ -28,7 +28,7 @@ main {
   margin-top: 5px;
   margin-bottom: 25px;
   padding: 10px;
-  font-size: 24px;
+  font-size: 2.5rem;
   background: #363c7c;
   color: white;
   text-align: right;
@@ -79,14 +79,14 @@ main {
 .numbers .btn {
   background-color: #404258;
   color: white;
-  font-size: 25px;
+  font-size: 2rem;
   border-radius: 29px;
 }
 
 .symbols .btn {
   background-color: #f49d1a;
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
   border-radius: 30px;
 }
 
@@ -99,31 +99,45 @@ main {
   background-color: #c0c0c0;
   color: black;
   /* grid-column: span 2; */
-  font-size: 40px;
+  font-size: 3rem;
 }
 
 .btn:hover {
   filter: brightness(1.15);
 }
 
-/* History section under the calculator */
+/* Arrow for history */
+#toggleHistory {
+  background: transparent;
+  border: none;
+  padding-top: 10px;
+  font-size: 1.3rem;
+  color: #686663;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#toggleHistory.open {
+  transform: rotate(90deg); /* rotate arrow when open */
+}
+
+/* History panel hidden by default */
 #history {
-  margin-top: 20px;
+  max-height: 200px; /* adjust as needed */
+  overflow-y: auto;
+  margin-top: 10px;
   color: rgb(130, 118, 118);
-  opacity: 0.5;
   font-size: 14px;
-  max-height: 100px;
-  overflow-y: auto; /* Scroll if history is long */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
 
-#history ul {
-  list-style-type: none;
-  padding-left: 0;
+#history.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
 
-#history li {
-  margin-bottom: 5px;
-}
 
 /* Responsive for screens that are smaller than 420px*/
 @media (max-width: 420px) {
@@ -137,7 +151,7 @@ main {
 
   #inputValue {
     height: 50px; /* Reduce display height */
-    font-size: 20px;
+    font-size: 2rem;
   }
 
   .numbers {
