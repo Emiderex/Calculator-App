@@ -20,6 +20,6 @@ It supports basic arithmetic operations and includes keyboard input, backspace, 
 
 
 ## Preview
-<img src="preview.png" alt="Calculator Preview" width="400">
+<img src="./assets/preview.png" alt="Calculator Preview" width="400">
 
 
